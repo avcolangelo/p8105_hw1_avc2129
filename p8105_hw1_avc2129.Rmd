@@ -1,0 +1,14 @@
+---
+title: "Homework 1"
+author: "Alexis Colangelo"
+date: "9/19/2019"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+
