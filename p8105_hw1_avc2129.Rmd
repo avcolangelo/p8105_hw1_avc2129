@@ -81,7 +81,22 @@ set.seed(3)
   )
   
     ```
-#### Description: The number of observations in this data frame is `r nrow(problem2_df)`and the number of variables is `r ncol(problem2_df)`. The mean of x is `r mean(pull(problem2_df, x))`, the median of x is `r median(pull(problem2_df, x))`, and the standard deviation of x is `r sd(pull(problem2_df, x))`.
+#### Description: The number of observations in this data frame is `r nrow(problem2_df)`and the number of variables is `r ncol(problem2_df)`. The mean of x is `r mean(pull(problem2_df, x))`, the median of x is `r median(pull(problem2_df, x))`. The standard deviation of x is `r sd(pull(problem2_df, x))`. The proprotion of cases for which x + y > 1 is r sum(pull(problem2_df, vec_numeric)) / 500.
+
+# Make a scatterplot of y vs x; color points using the logical variable (adding color = ... inside of aes in your ggplot code should help).
+
+```{r}
+plot_1 = ggplot(problem2_df, aes(x = x, y = y, color = vec_logical)) + geom_point()
+
+plot_2 = ggplot(problem2_df, aes(x = x, y = y, color = vec_numeric)) + geom_point()
+
+plot_3 = ggplot(problem2_df, aes(x = x, y = y, color = vec_factor)) + geom_point()
+
+```
+# Export first scatterplot 
+
+```{r}
+ggsave("scatter_plot_1.pdf") 
 
 
  
