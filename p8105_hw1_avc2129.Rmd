@@ -5,10 +5,32 @@ date: "9/19/2019"
 output: github_document
 ---
 
-```{r setup, include=FALSE}
+```{r_setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## R Markdown
+## Problem 1
+
+### Creating specified data frame with:
+* a random sample of size 8 from a standard Normal distribution
+* a logical vector indicating whether elements of the sample are greater than 0
+* a character vector of length 8
+* a factor vector of length 8, with 3 different factor “levels”
+
+```{r_library, include=FALSE}
+library(tidyverse)
+```
+
+```{r_dataframe}
+set.seed(2)
+
+  problem1_df = tibble(
+    rand_number = rnorm(8, mean = 0, sd = 1),
+    vec_logical = c(rand_number > 0),
+    vec_char = c("one", "two", "three", "four", "five", "six", "seven", "eight"),
+    vec_factor = factor(c("low", "high", "low", "medium", "high", "medium", "high", "medium"), 
+        levels = c("low", "medium", "high"))
+    )
+```
 
 
